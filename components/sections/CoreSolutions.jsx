@@ -10,6 +10,7 @@ import {
     Workflow,
     ShieldCheck
 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
     {
@@ -89,7 +90,6 @@ export default function CoreSolutions() {
                 </div>
 
 
-
                 {/* GRID */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -107,17 +107,21 @@ export default function CoreSolutions() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -40 }}
                                     transition={{ duration: 0.45, delay: index * 0.06 }}
-                                    className="group relative p-8 rounded-2xl border border-slate-200 hover:border-primary/30 bg-white hover:shadow-2xl transition-all"
+                                    whileHover={{ y: -8 }}
+                                    className="group relative p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-2xl transition-all duration-300 overflow-hidden"
                                 >
 
-                                    {/* gradient hover glow */}
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl transition"></div>
+                                    {/* Gradient Hover Background */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100"></div>
 
                                     <div className="relative">
 
                                         {/* ICON */}
-                                        <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition">
+                                        <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-primary mb-6 
+                                        group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition duration-300">
+
                                             <Icon size={24} />
+
                                         </div>
 
                                         {/* TITLE */}
@@ -173,13 +177,18 @@ export default function CoreSolutions() {
                                     complex and unconventional business problems.
                                 </p>
 
-                                <button className="mt-6 bg-white text-primary px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">
-                                    Book a Consultation
-                                </button>
+                                <Link href="/contact">
+                                    <button className="mt-6 bg-white text-primary px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">
+                                        Book a Consultation
+                                    </button>
+                                </Link>
 
                             </div>
 
+
                         </motion.div>
+
+
                     </AnimatePresence>
 
                 </div>

@@ -2,14 +2,15 @@
 
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
+import { usePathname } from "next/navigation";
 
 export default function SmoothScroll({ children }) {
 
     const lenisRef = useRef(null);
+    const pathname = usePathname();
 
     useEffect(() => {
 
-        // Respect user's reduced motion preference
         const prefersReducedMotion = window.matchMedia(
             "(prefers-reduced-motion: reduce)"
         ).matches;
@@ -17,14 +18,20 @@ export default function SmoothScroll({ children }) {
         if (prefersReducedMotion) return;
 
         const lenis = new Lenis({
-            lerp: 0.07, // ultra smooth
+            // Core smoothness
+            lerp: 0.07,          // premium smoothness
             duration: 1.2,
+
+            // Wheel & touch
             smoothWheel: true,
-            smoothTouch: false,
+            smoothTouch: true,
             wheelMultiplier: 0.9,
             touchMultiplier: 1.1,
+
+            // Stability
             infinite: false,
             normalizeWheel: true,
+            autoResize: true,
         });
 
         lenisRef.current = lenis;
@@ -44,6 +51,13 @@ export default function SmoothScroll({ children }) {
         };
 
     }, []);
+
+    // Reset scroll on route change (important for Next.js)
+    useEffect(() => {
+        if (lenisRef.current) {
+            lenisRef.current.scrollTo(0, { immediate: true });
+        }
+    }, [pathname]);
 
     return children;
 }

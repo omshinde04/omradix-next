@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import WhatsAppChat from "@/components/whatsapp/WhatsAppChat";
-// import Footer from "@/components/footer/Footer";
+import Footer from "@/components/footer/Footer";
 import { Inter } from "next/font/google";
 import SmoothScroll from "@/components/smoothscrool/SmoothScroll";
 
@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
           {/* Floating WhatsApp Button */}
           <WhatsAppChat />
 
-          {/* <Footer /> */}
+          <Footer />
         </SmoothScroll>
       </body>
     </html>
