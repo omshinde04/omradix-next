@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar/Navbar";
 import WhatsAppChat from "@/components/whatsapp/WhatsAppChat";
 // import Footer from "@/components/footer/Footer";
 import { Inter } from "next/font/google";
+import SmoothScroll from "@/components/smoothscrool/SmoothScroll";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,14 +47,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} bg-backgroundLight text-textPrimary antialiased`}
       >
-        <Navbar />
+        <SmoothScroll>
+          <Navbar />
 
-        <main>{children}</main>
+          <main>{children}</main>
 
-        {/* Floating WhatsApp Button */}
-        <WhatsAppChat />
+          {/* Floating WhatsApp Button */}
+          <WhatsAppChat />
 
-        {/* <Footer /> */}
+          {/* <Footer /> */}
+        </SmoothScroll>
       </body>
     </html>
   );

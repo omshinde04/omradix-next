@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+
+body {
+  overscroll-behavior: none;
 }
 
 body {
