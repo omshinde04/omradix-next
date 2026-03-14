@@ -4,138 +4,141 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
+/* FILTERS */
 
 const filters = [
     "All",
-    "Web",
-    "AI",
-    "Mobile",
+    "Corporate Website",
+    "AI Platform",
+    "Automation Platform",
+    "E-Commerce Platform",
     "Management System",
-    "Automation",
 ];
+
+/* PROJECT DATA */
 
 const projects = [
     {
         name: "AB Corp India",
-        category: "Web",
+        category: "Corporate Website",
         description:
-            "Corporate website designed to showcase services and strengthen digital presence.",
-        tech: ["Next.js", "SEO", "Responsive"],
-        image: "/images/abcorp.jpg",
-        url: "https://abcorpindia.com",
+            "A professional corporate website built to strengthen the company's digital presence and showcase their services to potential clients.",
+        image: "/images/projects/Abcorp.png",
+        url: "https://abcorpindia.com"
     },
+
     {
         name: "CARPS India",
-        category: "Web",
+        category: "Corporate Website",
         description:
-            "Modern company website built with high performance architecture.",
-        tech: ["Next.js", "Modern UI"],
-        image: "/images/carps.jpg",
-        url: "https://carpsindia.com",
+            "A modern company website designed to highlight services, build credibility, and improve online visibility for the organization.",
+        image: "/images/projects/carpsindia.png",
+        url: "https://carpsindia.com"
     },
+
     {
         name: "PhishScan",
-        category: "AI",
+        category: "AI Platform",
         description:
-            "AI-powered phishing detection system analyzing suspicious emails.",
-        tech: ["AI", "Security"],
-        image: "/images/project1.jpg",
-        url: "https://phishscan.vercel.app/",
+            "An intelligent security platform that detects phishing threats by analyzing suspicious emails and URLs to help organizations protect their systems.",
+        image: "/images/projects/AI-Based.png",
+        url: "https://phishscan.vercel.app/"
     },
+
     {
-        name: "MindWell",
-        category: "AI",
+        name: "MindWell AI",
+        category: "AI Platform",
         description:
-            "AI wellness platform that tracks daily habits and provides insights.",
-        tech: ["AI", "Analytics"],
-        image: "/images/project2.jpg",
-        url: "https://a-iwellness.vercel.app/",
+            "A wellness platform powered by AI that helps users track daily habits and receive personalized insights to improve their well-being.",
+        image: "/images/projects/Ai-wellness.png",
+        url: "https://a-iwellness.vercel.app/"
     },
+
     {
         name: "CertiGen",
-        category: "Automation",
+        category: "Automation Platform",
         description:
-            "Automated certificate generator platform for institutions.",
-        tech: ["Automation", "System"],
-        image: "/images/project3.jpg",
-        url: "https://certificate-genertor.vercel.app/",
+            "An automated certificate generation platform designed for institutions to create and distribute certificates efficiently.",
+        image: "/images/projects/certificates.png",
+        url: "https://certificate-genertor.vercel.app/"
     },
+
     {
         name: "Furniture E-Commerce",
-        category: "Web",
+        category: "E-Commerce Platform",
         description:
-            "Modern furniture e-commerce platform with filters and checkout.",
-        tech: ["Ecommerce", "UI"],
-        image: "/images/project4.jpg",
-        url: "#",
+            "A modern online furniture store designed to showcase products, simplify browsing, and provide a smooth shopping experience.",
+        image: "/images/projects/furniture.png",
+        url: "#"
     },
+
     {
-        name: "Portfolio Website",
-        category: "Web",
-        description:
-            "Modern developer portfolio with smooth animations.",
-        tech: ["Next.js", "Animations"],
-        image: "/images/project5.jpg",
-        url: "https://omshinde.site",
-    },
-    {
-        name: "College Management System",
+        name: "Leave Management System",
         category: "Management System",
         description:
-            "Full college management system with attendance & results.",
-        tech: ["Dashboard", "Admin"],
-        image: "/images/project6.jpg",
-        url: "https://lms-cyan-gamma.vercel.app/",
-    },
+            "A digital platform designed to streamline employee leave requests, approvals, and attendance management for organizations.",
+        image: "/images/projects/leave-management.jpeg",
+        url: "https://lms-cyan-gamma.vercel.app/"
+    }
 ];
 
 export default function ProjectsPage() {
+
     const [active, setActive] = useState("All");
 
     const filtered =
         active === "All"
             ? projects
-            : projects.filter((p) => p.category === active);
+            : projects.filter(p => p.category === active);
 
     return (
+
         <main className="bg-white">
 
             {/* HERO */}
 
-            <section className="max-w-7xl mx-auto px-6 pt-28 pb-14 text-center">
+            <section className="max-w-7xl mx-auto px-6 pt-28 pb-16 text-center">
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="text-4xl md:text-5xl font-bold text-slate-900"
                 >
+
                     Our Featured Projects
+
                 </motion.h1>
 
                 <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-                    Real digital products we built for startups and businesses.
+                    Explore digital platforms and products we’ve built to help businesses grow and operate more efficiently.
                 </p>
 
             </section>
 
-            {/* FILTER TABS */}
+            {/* FILTERS */}
 
             <section className="max-w-7xl mx-auto px-6">
 
-                <div className="flex flex-wrap justify-center gap-3 mb-14">
+                <div className="flex flex-wrap justify-center gap-3 mb-16">
 
-                    {filters.map((filter) => (
+                    {filters.map(filter => (
 
                         <button
                             key={filter}
                             onClick={() => setActive(filter)}
                             className={`px-5 py-2 rounded-full text-sm font-medium transition
-                ${active === filter
-                                    ? "bg-primary text-white shadow-md"
+
+${active === filter
+                                    ? "bg-blue-600 text-white shadow-md"
                                     : "bg-slate-100 hover:bg-slate-200 text-slate-700"
-                                }`}
+                                }
+`}
                         >
+
                             {filter}
+
                         </button>
 
                     ))}
@@ -143,7 +146,6 @@ export default function ProjectsPage() {
                 </div>
 
             </section>
-
 
             {/* PROJECT GRID */}
 
@@ -153,87 +155,60 @@ export default function ProjectsPage() {
 
                     {filtered.map((project, index) => (
 
-                        <motion.div
+                        <motion.article
                             key={project.name}
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.06 }}
-                            whileHover={{
-                                rotateX: 3,
-                                rotateY: -3,
-                                scale: 1.02,
-                            }}
-                            className="group relative rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-2xl transition overflow-hidden"
+                            transition={{ delay: index * 0.05 }}
+                            whileHover={{ y: -6 }}
+                            className="group rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-2xl transition overflow-hidden"
                         >
-
-                            {/* Gradient Glow */}
-
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10" />
 
                             {/* IMAGE */}
 
-                            <div className="relative h-[180px] overflow-hidden">
+                            <div className="relative h-[210px] overflow-hidden">
 
-                                <motion.div
-                                    whileHover={{ y: -40 }}
-                                    transition={{ duration: 6 }}
-                                    className="absolute inset-0"
-                                >
-
-                                    <Image
-                                        src={project.image}
-                                        alt={project.name}
-                                        fill
-                                        sizes="(max-width:768px) 100vw, 33vw"
-                                        className="object-cover"
-                                    />
-
-                                </motion.div>
+                                <Image
+                                    src={project.image}
+                                    alt={project.name}
+                                    fill
+                                    sizes="(max-width:768px) 100vw, 33vw"
+                                    className="object-cover group-hover:scale-105 transition duration-500"
+                                />
 
                             </div>
 
                             {/* CONTENT */}
 
-                            <div className="relative p-6">
+                            <div className="p-6">
 
-                                <h3 className="text-lg font-semibold text-slate-900">
+                                <span className="text-xs font-medium text-blue-600">
+                                    {project.category}
+                                </span>
+
+                                <h3 className="text-lg font-semibold text-slate-900 mt-2">
                                     {project.name}
                                 </h3>
 
-                                <p className="text-slate-600 text-sm mt-2 leading-relaxed">
+                                <p className="text-slate-600 text-sm mt-3 leading-relaxed">
                                     {project.description}
                                 </p>
-
-                                {/* TECH */}
-
-                                <div className="flex flex-wrap gap-2 mt-3">
-
-                                    {project.tech.map((tech) => (
-
-                                        <span
-                                            key={tech}
-                                            className="text-xs bg-blue-100 text-primary px-2 py-1 rounded-full"
-                                        >
-                                            {tech}
-                                        </span>
-
-                                    ))}
-
-                                </div>
-
-                                {/* BUTTON */}
 
                                 <Link
                                     href={project.url}
                                     target="_blank"
-                                    className="inline-block mt-5 text-primary font-medium hover:underline"
+                                    className="inline-flex items-center gap-1 mt-5 text-blue-600 font-medium hover:underline"
                                 >
-                                    Live →
+
+                                    View Project
+
+                                    <ArrowUpRight size={16} />
+
                                 </Link>
 
                             </div>
 
-                        </motion.div>
+                        </motion.article>
 
                     ))}
 
@@ -241,28 +216,31 @@ export default function ProjectsPage() {
 
             </section>
 
-
             {/* CTA */}
 
             <section className="py-20 bg-slate-50 text-center">
 
                 <h2 className="text-3xl font-bold text-slate-900">
-                    Want a Project Like This?
+                    Have a Project Idea?
                 </h2>
 
                 <p className="mt-4 text-slate-600">
-                    Let's build a powerful digital product together.
+                    Let's build a powerful digital product tailored for your business.
                 </p>
 
                 <Link
                     href="/contact"
-                    className="inline-block mt-8 px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-blue-700 transition"
+                    className="inline-block mt-8 px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition"
                 >
+
                     Start Your Project
+
                 </Link>
 
             </section>
 
         </main>
+
     );
+
 }

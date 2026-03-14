@@ -147,7 +147,7 @@ export default function ContactPage() {
 
                     <div className="mt-6 space-y-4">
 
-                        <InfoCard icon={<Mail />} title="Email Us" value="shindeom052@gmail.com" />
+                        <InfoCard icon={<Mail />} title="Email Us" value="omradixsolutions@gmail.com" />
 
                         <InfoCard icon={<Phone />} title="Call Us" value="+91 9373545169" />
 
