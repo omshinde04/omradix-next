@@ -1,52 +1,77 @@
-import ContactPage from "./ContactPage";
+"use client";
 
-export const metadata = {
-    title: "Contact Us | Omradix Solutions",
-    description:
-        "Contact Omradix Solutions for web development, SaaS platforms, mobile apps, and digital transformation services.",
-    alternates: {
-        canonical: "https://www.omradixsolutions.in/contact",
-    },
-    openGraph: {
-        title: "Contact Omradix Solutions",
-        description:
-            "Let's build something amazing together. Contact Omradix Solutions for modern digital product development.",
-        url: "https://www.omradixsolutions.in/contact",
-        siteName: "Omradix Solutions",
-        type: "website",
-        images: [
-            {
-                url: "/og-image.png",
-                width: 1200,
-                height: 630,
-                alt: "Contact Omradix Solutions",
-            },
-        ],
-    },
-};
+import Head from "next/head";
+import ContactHero from "../../components/contact/ContactHero"
+import ContactForm from "../../components/contact/ContactForm"
+import ContactInfo from "../../components/contact/ContactInfo"
+import ContactCTA from "../../components/contact/ContactCTA"
 
-export default function Page() {
+export default function ContactPage() {
+
     return (
-        <>
-            <ContactPage />
 
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "LocalBusiness",
-                        name: "Omradix Solutions",
-                        url: "https://www.omradixsolutions.in",
-                        email: "omradixsolutions@gmail.com",
-                        telephone: "+91 9373545169",
-                        address: {
-                            "@type": "PostalAddress",
-                            addressCountry: "India",
-                        },
-                    }),
-                }}
-            />
+        <>
+            {/* SEO META */}
+
+            <Head>
+
+                <title>
+                    Contact Us | OmRadix Solutions
+                </title>
+
+                <meta
+                    name="description"
+                    content="Contact OmRadix Solutions to build scalable websites, mobile apps, AI systems and cloud platforms. Our engineers will respond within 24 hours."
+                />
+
+                <meta
+                    name="keywords"
+                    content="web development company, mobile app development, SaaS development, AI solutions, software development India"
+                />
+
+                <meta
+                    property="og:title"
+                    content="Contact OmRadix Solutions"
+                />
+
+                <meta
+                    property="og:description"
+                    content="Have a project idea? Contact our engineering team to build scalable digital products."
+                />
+
+                <meta
+                    property="og:type"
+                    content="website"
+                />
+
+            </Head>
+
+
+            <main className="bg-white">
+
+                {/* HERO */}
+
+                <ContactHero />
+
+
+                {/* CONTACT SECTION */}
+
+                <section className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-14">
+
+                    <ContactForm />
+
+                    <ContactInfo />
+
+                </section>
+
+
+                {/* FINAL CTA */}
+
+                <ContactCTA />
+
+            </main>
+
         </>
     );
+
 }
