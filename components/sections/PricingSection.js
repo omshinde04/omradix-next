@@ -9,7 +9,7 @@ const plans = [
         name: "Starter",
         price: "₹59,999",
         label: "Starting From",
-        desc: "Ideal for startups and small businesses launching their first professional website or digital presence.",
+        desc: "Ideal for startups and small businesses launching their first professional website.",
         features: [
             "Professional Business Website",
             "Responsive Mobile Design",
@@ -35,7 +35,7 @@ const plans = [
         name: "Enterprise",
         price: "Custom",
         label: "",
-        desc: "For enterprises and growing companies needing custom software systems and advanced integrations.",
+        desc: "For enterprises needing advanced architecture and integrations.",
         features: [
             "Custom Software Architecture",
             "Advanced Integrations",
@@ -48,32 +48,32 @@ const plans = [
 
 export default function PricingSection() {
     return (
-        <section className="py-24 bg-slate-50">
+        <section className="relative py-28 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden">
 
-            <div className="max-w-7xl mx-auto px-6">
+            {/* Background glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_60%)]" />
+
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
 
                 {/* HEADER */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
                     className="max-w-2xl mb-16"
                 >
-                    <h2 className="text-4xl font-bold text-slate-900">
+                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                         Transparent Investment
                     </h2>
 
-                    <p className="mt-4 text-slate-600">
-                        Flexible pricing models designed for startups, growing businesses,
-                        and enterprises. Every project is unique — we’re happy to discuss a
-                        custom solution that fits your goals and budget.
+                    <p className="mt-5 text-slate-600 text-lg">
+                        Flexible pricing models designed for startups and enterprises.
+                        Every project is unique — we create custom solutions tailored to your goals.
                     </p>
                 </motion.div>
 
-
                 {/* GRID */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
                     {plans.map((plan, index) => {
 
@@ -85,39 +85,44 @@ export default function PricingSection() {
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -6 }}
-                                className={`relative flex flex-col h-full rounded-2xl p-8 border transition bg-white
-                ${highlight ? "border-primary shadow-lg" : "border-slate-200 shadow-sm"}`}
+                                transition={{ delay: index * 0.15 }}
+                                whileHover={{ y: -8 }}
+                                className={`relative flex flex-col rounded-3xl p-8 backdrop-blur-lg transition
+                ${highlight
+                                        ? "border border-blue-500/40 shadow-xl bg-gradient-to-b from-white to-blue-50"
+                                        : "border border-slate-200 shadow-md bg-white"
+                                    }`}
                             >
 
-                                {/* MOST POPULAR BADGE */}
+                                {/* MOST POPULAR */}
                                 {highlight && (
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs px-4 py-1 rounded-full">
-                                        MOST POPULAR
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs px-5 py-1.5 rounded-full shadow">
+                                        Most Popular
                                     </div>
                                 )}
 
                                 {/* PLAN NAME */}
-                                <h3 className="text-lg font-semibold text-slate-900">
+                                <h3 className="text-xl font-semibold text-slate-900">
                                     {plan.name}
                                 </h3>
 
                                 {/* PRICE */}
-                                <div className="mt-3">
+                                <div className="mt-4">
+
                                     {plan.label && (
                                         <p className="text-xs text-slate-500">
                                             {plan.label}
                                         </p>
                                     )}
 
-                                    <p className="text-4xl font-bold text-slate-900">
+                                    <p className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
                                         {plan.price}
                                     </p>
+
                                 </div>
 
                                 {/* DESCRIPTION */}
-                                <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+                                <p className="mt-4 text-sm text-slate-600 leading-relaxed">
                                     {plan.desc}
                                 </p>
 
@@ -129,19 +134,22 @@ export default function PricingSection() {
                                             key={feature}
                                             className="flex items-center gap-3 text-sm text-slate-700"
                                         >
-                                            <Check size={18} className="text-primary" />
+                                            <Check size={18} className="text-blue-600" />
                                             {feature}
                                         </li>
                                     ))}
 
                                 </ul>
 
-                                {/* BUTTON */}
+                                {/* CTA */}
                                 <Link href="/contact" className="mt-8">
 
                                     <button
-                                        className="w-full py-3 rounded-full font-medium transition 
-                    bg-primary text-white hover:bg-blue-700 shadow-md hover:shadow-lg"
+                                        className={`w-full py-3 rounded-full font-semibold transition
+                    ${highlight
+                                                ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg"
+                                                : "bg-slate-900 text-white hover:bg-black"
+                                            }`}
                                     >
                                         Discuss Your Project
                                     </button>
@@ -154,17 +162,16 @@ export default function PricingSection() {
 
                 </div>
 
-
-                {/* NOTE */}
+                {/* FOOT NOTE */}
                 <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
-                    className="text-center text-sm text-slate-500 mt-12 max-w-2xl mx-auto"
+                    className="text-center text-sm text-slate-500 mt-14 max-w-2xl mx-auto"
                 >
-                    Prices are indicative and may vary depending on project scope,
-                    integrations, and complexity. Contact us for a tailored estimate.
+                    Prices are indicative and may vary depending on integrations,
+                    complexity, and infrastructure requirements.
                 </motion.p>
 
             </div>
