@@ -3,6 +3,7 @@ import Navbar from "../components/navbar/Navbar";
 import WhatsAppChat from "../components/whatsapp/WhatsAppChat";
 import Footer from "../components/footer/Footer";
 import SmoothScroll from "../components/smoothscrool/SmoothScroll";
+import CookieBanner from "../components/global/CookieBanner";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -51,17 +52,7 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
-
-  /* FAVICONS */
 
   icons: {
     icon: [
@@ -69,19 +60,7 @@ export const metadata = {
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180" },
-    ],
-    other: [
-      {
-        rel: "android-chrome",
-        url: "/android-chrome-192x192.png",
-      },
-      {
-        rel: "android-chrome",
-        url: "/android-chrome-512x512.png",
-      },
-    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
 
   manifest: "/site.webmanifest",
@@ -94,7 +73,6 @@ export const metadata = {
     siteName: "Omradix Solutions",
     locale: "en_US",
     type: "website",
-
     images: [
       {
         url: "/og-image.png",
@@ -126,10 +104,13 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
       <body
         className={`${inter.className} bg-backgroundLight text-textPrimary antialiased`}
       >
+
         <SmoothScroll>
+
           <Navbar />
 
           <main>{children}</main>
@@ -137,8 +118,14 @@ export default function RootLayout({ children }) {
           <WhatsAppChat />
 
           <Footer />
+
+          {/* COOKIE BANNER */}
+          <CookieBanner />
+
         </SmoothScroll>
+
       </body>
+
     </html>
   );
 }
