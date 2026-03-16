@@ -248,11 +248,30 @@ export default function Navbar() {
 
                                 {/* Mobile CTA */}
 
-                                <Link href="/projects" onClick={() => setOpen(false)}>
-                                    <button className="mt-8 bg-blue-600 text-white py-3 rounded-full text-lg hover:bg-blue-700 transition flex items-center justify-center gap-2">
+                                <Link
+                                    href="/projects"
+                                    onClick={() => setOpen(false)}
+                                    className="inline-flex w-full sm:w-auto"
+                                >
+                                    <span
+                                        className="
+    mt-6 sm:mt-8
+    w-full sm:w-auto
+    bg-blue-600 text-white
+    px-6 py-3
+    sm:px-8 sm:py-3
+    rounded-full
+    text-base sm:text-lg
+    font-medium
+    hover:bg-blue-700
+    transition
+    flex items-center justify-center gap-2
+    shadow-md hover:shadow-lg
+  "
+                                    >
                                         View Projects
                                         <ArrowRight size={18} />
-                                    </button>
+                                    </span>
                                 </Link>
                             </div>
                         </motion.div>

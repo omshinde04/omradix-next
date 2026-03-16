@@ -6,8 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-/* FILTERS */
-
 const filters = [
     "All",
     "Corporate Website",
@@ -17,71 +15,63 @@ const filters = [
     "Management System",
 ];
 
-/* PROJECT DATA */
-
 const projects = [
     {
         name: "AB Corp India",
         category: "Corporate Website",
         description:
-            "A professional corporate website built to strengthen the company's digital presence and showcase their services to potential clients.",
+            "Professional corporate website designed to improve digital presence and showcase company services.",
         image: "/images/projects/Abcorp.png",
-        url: "https://abcorpindia.com"
+        url: "https://abcorpindia.com",
     },
-
     {
         name: "CARPS India",
         category: "Corporate Website",
         description:
-            "A modern company website designed to highlight services, build credibility, and improve online visibility for the organization.",
+            "Modern company website focused on credibility, services showcase and improved online visibility.",
         image: "/images/projects/carpsindia.png",
-        url: "https://carpsindia.com"
+        url: "https://carpsindia.com",
     },
-
     {
         name: "PhishScan",
         category: "AI Platform",
         description:
-            "An intelligent security platform that detects phishing threats by analyzing suspicious emails and URLs to help organizations protect their systems.",
+            "AI-powered phishing detection platform analyzing suspicious emails and URLs to protect organizations.",
         image: "/images/projects/AI-Based.png",
-        url: "https://phishscan.vercel.app/"
+        url: "https://phishscan.vercel.app/",
     },
-
     {
         name: "MindWell AI",
         category: "AI Platform",
         description:
-            "A wellness platform powered by AI that helps users track daily habits and receive personalized insights to improve their well-being.",
+            "AI-driven wellness platform providing personalized habit insights and mental health tracking.",
         image: "/images/projects/Ai-wellness.png",
-        url: "https://a-iwellness.vercel.app/"
+        url: "https://a-iwellness.vercel.app/",
     },
-
     {
         name: "CertiGen",
         category: "Automation Platform",
         description:
-            "An automated certificate generation platform designed for institutions to create and distribute certificates efficiently.",
+            "Automated certificate generation platform for educational institutions and events.",
         image: "/images/projects/certificates.png",
-        url: "https://certificate-genertor.vercel.app/"
+        url: "https://certificate-genertor.vercel.app/",
     },
-
     {
         name: "Furniture E-Commerce",
         category: "E-Commerce Platform",
         description:
-            "A modern online furniture store designed to showcase products, simplify browsing, and provide a smooth shopping experience.",
+            "Online furniture marketplace offering seamless browsing and purchasing experience.",
         image: "/images/projects/furniture.png",
-        url: "#"
+        url: "#",
     },
-
     {
         name: "Leave Management System",
         category: "Management System",
         description:
-            "A digital platform designed to streamline employee leave requests, approvals, and attendance management for organizations.",
+            "Enterprise leave management platform simplifying employee leave tracking and approvals.",
         image: "/images/projects/leave-management.jpeg",
-        url: "https://lms-cyan-gamma.vercel.app/"
-    }
+        url: "https://lms-cyan-gamma.vercel.app/",
+    },
 ];
 
 export default function ProjectsPage() {
@@ -91,54 +81,52 @@ export default function ProjectsPage() {
     const filtered =
         active === "All"
             ? projects
-            : projects.filter(p => p.category === active);
+            : projects.filter((p) => p.category === active);
 
     return (
-
         <main className="bg-white">
 
             {/* HERO */}
 
-            <section className="max-w-7xl mx-auto px-6 pt-28 pb-16 text-center">
+            <section className="max-w-7xl mx-auto px-6 pt-28 pb-14 text-center">
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="text-4xl md:text-5xl font-bold text-slate-900"
                 >
-
                     Our Featured Projects
-
                 </motion.h1>
 
-                <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-                    Explore digital platforms and products we’ve built to help businesses grow and operate more efficiently.
+                <p className="mt-4 text-slate-600 max-w-xl mx-auto">
+                    Explore digital products and platforms we’ve built for startups,
+                    enterprises and innovative businesses.
                 </p>
 
             </section>
 
+
+
             {/* FILTERS */}
 
-            <section className="max-w-7xl mx-auto px-6">
+            <section className="max-w-7xl mx-auto px-6 mb-16">
 
-                <div className="flex flex-wrap justify-center gap-3 mb-16">
+                <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
 
-                    {filters.map(filter => (
+                    {filters.map((filter) => (
 
                         <button
                             key={filter}
                             onClick={() => setActive(filter)}
-                            className={`px-5 py-2 rounded-full text-sm font-medium transition
+                            className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition
 
 ${active === filter
-                                    ? "bg-blue-600 text-white shadow-md"
+                                    ? "bg-blue-600 text-white shadow"
                                     : "bg-slate-100 hover:bg-slate-200 text-slate-700"
                                 }
 `}
                         >
-
                             {filter}
-
                         </button>
 
                     ))}
@@ -146,6 +134,8 @@ ${active === filter
                 </div>
 
             </section>
+
+
 
             {/* PROJECT GRID */}
 
@@ -160,13 +150,12 @@ ${active === filter
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.05 }}
-                            whileHover={{ y: -6 }}
-                            className="group rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-2xl transition overflow-hidden"
+                            className="group rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-xl transition"
                         >
 
                             {/* IMAGE */}
 
-                            <div className="relative h-[210px] overflow-hidden">
+                            <div className="relative h-[220px] overflow-hidden">
 
                                 <Image
                                     src={project.image}
@@ -182,11 +171,11 @@ ${active === filter
 
                             <div className="p-6">
 
-                                <span className="text-xs font-medium text-blue-600">
+                                <span className="inline-block text-xs font-semibold px-3 py-1 bg-blue-50 text-blue-600 rounded-full">
                                     {project.category}
                                 </span>
 
-                                <h3 className="text-lg font-semibold text-slate-900 mt-2">
+                                <h3 className="text-lg font-semibold text-slate-900 mt-4">
                                     {project.name}
                                 </h3>
 
@@ -197,13 +186,10 @@ ${active === filter
                                 <Link
                                     href={project.url}
                                     target="_blank"
-                                    className="inline-flex items-center gap-1 mt-5 text-blue-600 font-medium hover:underline"
+                                    className="inline-flex items-center gap-2 mt-5 text-blue-600 font-medium hover:underline"
                                 >
-
                                     View Project
-
                                     <ArrowUpRight size={16} />
-
                                 </Link>
 
                             </div>
@@ -216,31 +202,29 @@ ${active === filter
 
             </section>
 
+
+
             {/* CTA */}
 
-            <section className="py-20 bg-slate-50 text-center">
+            <section className="py-24 bg-slate-50 text-center">
 
-                <h2 className="text-3xl font-bold text-slate-900">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
                     Have a Project Idea?
                 </h2>
 
-                <p className="mt-4 text-slate-600">
-                    Let's build a powerful digital product tailored for your business.
+                <p className="mt-4 text-slate-600 max-w-md mx-auto">
+                    Let’s build a powerful digital product tailored to your business needs.
                 </p>
 
                 <Link
                     href="/contact"
                     className="inline-block mt-8 px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition"
                 >
-
                     Start Your Project
-
                 </Link>
 
             </section>
 
         </main>
-
     );
-
 }
