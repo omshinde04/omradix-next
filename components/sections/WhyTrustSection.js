@@ -38,35 +38,35 @@ const features = [
 
 export default function WhyTrustSection() {
     return (
-        <section className="relative py-32 bg-white">
+        <section className="relative pt-6 sm:pt-10 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-white">
 
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
                 {/* HEADER */}
 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="text-center max-w-3xl mx-auto"
                 >
 
-                    <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
                         Engineering That Businesses Trust
                     </h2>
 
-                    <p className="mt-6 text-slate-600 text-lg">
-                        Omradix Solutions builds reliable digital platforms using
-                        modern engineering practices, scalable architecture and
-                        cloud-native infrastructure.
+                    <p className="mt-3 sm:mt-4 text-slate-600 text-base sm:text-lg">
+                        Omradix Solutions builds reliable digital platforms using modern
+                        engineering practices, scalable architecture and cloud-native
+                        infrastructure.
                     </p>
 
                 </motion.div>
 
 
-                {/* GRID */}
+                {/* FEATURE GRID */}
 
-                <div className="mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="mt-10 sm:mt-14 lg:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
 
                     {features.map((feature, index) => {
 
@@ -76,65 +76,71 @@ export default function WhyTrustSection() {
 
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 30 }}
+                                initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -6 }}
-                                className="group p-8 rounded-2xl border border-slate-200 hover:border-blue-200 bg-white transition shadow-sm hover:shadow-lg"
+                                transition={{ delay: index * 0.08 }}
+                                whileHover={{ y: -4 }}
+                                className="group p-6 sm:p-7 rounded-2xl border border-slate-200 hover:border-blue-200 bg-white transition shadow-sm hover:shadow-lg"
                             >
 
-                                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">
-
-                                    <Icon size={22} />
-
+                                <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">
+                                    <Icon size={20} />
                                 </div>
 
-                                <h3 className="mt-6 text-lg font-semibold text-slate-900">
+                                <h3 className="mt-4 text-base sm:text-lg font-semibold text-slate-900">
                                     {feature.title}
                                 </h3>
 
-                                <p className="mt-3 text-slate-600 text-sm leading-relaxed">
+                                <p className="mt-2 text-slate-600 text-sm leading-relaxed">
                                     {feature.desc}
                                 </p>
 
                             </motion.div>
 
-                        )
+                        );
 
                     })}
 
                 </div>
 
 
-                {/* TRUST METRICS */}
+                {/* METRICS */}
 
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-10 text-center"
+                    transition={{ delay: 0.3 }}
+                    className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-6 text-center"
                 >
 
                     <div>
-                        <p className="text-3xl font-bold text-slate-900">99.9%</p>
-                        <p className="text-sm text-slate-500 mt-1">Platform Reliability</p>
+                        <p className="text-2xl sm:text-3xl font-bold text-slate-900">99.9%</p>
+                        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+                            Platform Reliability
+                        </p>
                     </div>
 
                     <div>
-                        <p className="text-3xl font-bold text-slate-900">50+</p>
-                        <p className="text-sm text-slate-500 mt-1">Projects Built</p>
+                        <p className="text-2xl sm:text-3xl font-bold text-slate-900">50+</p>
+                        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+                            Projects Built
+                        </p>
                     </div>
 
                     <div>
-                        <p className="text-3xl font-bold text-slate-900">10x</p>
-                        <p className="text-sm text-slate-500 mt-1">Performance Optimized</p>
+                        <p className="text-2xl sm:text-3xl font-bold text-slate-900">10x</p>
+                        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+                            Performance Optimized
+                        </p>
                     </div>
 
                     <div>
-                        <p className="text-3xl font-bold text-slate-900">24/7</p>
-                        <p className="text-sm text-slate-500 mt-1">System Monitoring</p>
+                        <p className="text-2xl sm:text-3xl font-bold text-slate-900">24/7</p>
+                        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+                            System Monitoring
+                        </p>
                     </div>
 
                 </motion.div>
