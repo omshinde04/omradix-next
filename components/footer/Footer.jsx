@@ -163,41 +163,41 @@ export default function Footer() {
                     </p>
 
 
-                    {/* SOCIAL ICONS */}
-
                     <div className="flex items-center gap-5">
 
+                        {/* LINKEDIN (redirect to home for now) */}
                         <motion.a
                             whileHover={{ y: -3 }}
-                            href="https://linkedin.com"
-                            target="_blank"
+                            href="/"
                             className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 transition"
                         >
                             <Linkedin size={18} />
                         </motion.a>
 
+                        {/* TWITTER (redirect to home) */}
                         <motion.a
                             whileHover={{ y: -3 }}
-                            href="https://twitter.com"
-                            target="_blank"
+                            href="/"
                             className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 transition"
                         >
                             <Twitter size={18} />
                         </motion.a>
 
+                        {/* INSTAGRAM (REAL LINK ✅) */}
                         <motion.a
                             whileHover={{ y: -3 }}
-                            href="https://instagram.com"
+                            href="https://www.instagram.com/omradix_solutions?igsh=MWY1MmQxOWxwMzFq&utm_source=qr"
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 transition"
                         >
                             <Instagram size={18} />
                         </motion.a>
 
+                        {/* FACEBOOK (redirect to home) */}
                         <motion.a
                             whileHover={{ y: -3 }}
-                            href="https://facebook.com"
-                            target="_blank"
+                            href="/"
                             className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 transition"
                         >
                             <Facebook size={18} />
