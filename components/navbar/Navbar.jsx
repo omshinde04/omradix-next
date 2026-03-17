@@ -227,7 +227,7 @@ export default function Navbar() {
                                         View Projects
                                         <ArrowRight size={18} />
                                     </span>
-                                </Link>3
+                                </Link>
                             </div>
                         </motion.div>
                     </>
