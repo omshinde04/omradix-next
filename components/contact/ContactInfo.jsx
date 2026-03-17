@@ -48,9 +48,9 @@ export default function ContactInfo() {
 
                 <InfoCard icon={<Mail size={18} />} title="Email" value="omradixsolutions@gmail.com" />
 
-                <InfoCard icon={<Phone size={18} />} title="Phone" value="+91 9373545169" />
+                <InfoCard icon={<Phone size={18} />} title="Phone" value="+91 9373545169 / +91 7378534650" />
 
-                <InfoCard icon={<Phone size={18} />} title="Phone" value="+91 7378534650" />
+
 
 
                 <InfoCard icon={<MapPin size={18} />} title="Location" value="India" />

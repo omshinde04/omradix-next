@@ -139,6 +139,11 @@ export default function Footer() {
                                 +91 9373545169
                             </li>
 
+                            <li className="flex items-center gap-2">
+                                <Phone size={16} />
+                                +91 7378534650
+                            </li>
+
                         </ul>
 
                     </div>
