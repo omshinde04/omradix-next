@@ -52,6 +52,7 @@ export const metadata = {
   },
 };
 
+import Script from "next/script";
 
 import Hero from "../components/hero/Hero";
 import HeroMobile from "../components/hero/HeroMobile";
@@ -63,6 +64,22 @@ import TechStackSection from "../components/sections/TechStackSection.jsx";
 export default function Home() {
   return (
     <>
+      {/* 🔥 LOGO STRUCTURED DATA (IMPORTANT FOR GOOGLE) */}
+
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Omradix Solutions",
+            url: "https://www.omradixsolutions.in",
+            logo: "https://www.omradixsolutions.in/logo.png",
+          }),
+        }}
+      />
+
       <Hero />
       <HeroMobile />
       <CoreSolutions />

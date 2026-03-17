@@ -14,6 +14,8 @@ import {
     Menu,
     X,
 } from "lucide-react";
+import Image from "next/image";
+
 
 const navLinks = [
     { name: "Home", href: "/", icon: Home },
@@ -71,76 +73,29 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-6 h-[74px] flex items-center justify-between">
                     {/* LOGO */}
 
+                    {/* LOGO */}
+
                     <Link href="/" className="flex items-center gap-3 group">
-                        <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center group-hover:scale-105 transition">
-                            <svg
-                                width="28"
-                                height="28"
-                                viewBox="0 0 100 100"
-                                fill="none"
-                                className="text-blue-600"
-                            >
-                                <rect
-                                    x="8"
-                                    y="8"
-                                    width="84"
-                                    height="84"
-                                    rx="22"
-                                    stroke="currentColor"
-                                    strokeWidth="6"
-                                />
 
-                                <circle cx="50" cy="50" r="9" fill="currentColor" />
+                        <div className="w-11 h-11 rounded-full overflow-hidden border border-slate-200 shadow-sm group-hover:shadow-md transition">
 
-                                <circle cx="50" cy="18" r="5" fill="currentColor" />
-                                <circle cx="82" cy="50" r="5" fill="currentColor" />
-                                <circle cx="50" cy="82" r="5" fill="currentColor" />
-                                <circle cx="18" cy="50" r="5" fill="currentColor" />
+                            <Image
+                                src="/logo.png"
+                                alt="Omradix Solutions Logo"
+                                width={44}
+                                height={44}
+                                quality={100}
+                                priority
+                                className="object-cover w-full h-full"
+                            />
 
-                                <line
-                                    x1="50"
-                                    y1="50"
-                                    x2="50"
-                                    y2="23"
-                                    stroke="currentColor"
-                                    strokeWidth="5"
-                                    strokeLinecap="round"
-                                />
-                                <line
-                                    x1="50"
-                                    y1="50"
-                                    x2="77"
-                                    y2="50"
-                                    stroke="currentColor"
-                                    strokeWidth="5"
-                                    strokeLinecap="round"
-                                />
-                                <line
-                                    x1="50"
-                                    y1="50"
-                                    x2="50"
-                                    y2="77"
-                                    stroke="currentColor"
-                                    strokeWidth="5"
-                                    strokeLinecap="round"
-                                />
-                                <line
-                                    x1="50"
-                                    y1="50"
-                                    x2="23"
-                                    y2="50"
-                                    stroke="currentColor"
-                                    strokeWidth="5"
-                                    strokeLinecap="round"
-                                />
-                            </svg>
                         </div>
 
                         <span className="text-lg font-semibold text-slate-900">
                             Omradix<span className="text-blue-600">Solutions</span>
                         </span>
-                    </Link>
 
+                    </Link>
                     {/* Desktop Navigation */}
 
                     <nav className="hidden md:flex items-center gap-10">
@@ -272,7 +227,7 @@ export default function Navbar() {
                                         View Projects
                                         <ArrowRight size={18} />
                                     </span>
-                                </Link>
+                                </Link>3
                             </div>
                         </motion.div>
                     </>
