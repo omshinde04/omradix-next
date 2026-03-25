@@ -17,6 +17,8 @@ export const useVoiceEngine = (API_BASE, sessionIdRef) => {
     const shouldListenRef = useRef(false);
     const isProcessingRef = useRef(false);
 
+    const isBrowser = typeof window !== "undefined";
+
     // ===============================
     // 🔊 STOP
     // ===============================
@@ -42,6 +44,8 @@ export const useVoiceEngine = (API_BASE, sessionIdRef) => {
     // 🔊 STREAM AUDIO
     // ===============================
     const playStreamingAudio = async (text) => {
+        if (!isBrowser) return;
+
         try {
             stopAll();
 
@@ -97,9 +101,11 @@ export const useVoiceEngine = (API_BASE, sessionIdRef) => {
     };
 
     // ===============================
-    // 🎤 START RECORDING (LOW LATENCY)
+    // 🎤 START RECORDING
     // ===============================
     const startRecording = async () => {
+        if (!isBrowser) return;
+
         try {
             if (!shouldListenRef.current) return;
             if (isPlayingRef.current) return;
@@ -127,26 +133,24 @@ export const useVoiceEngine = (API_BASE, sessionIdRef) => {
                     audioChunksRef.current.push(e.data);
                 }
 
-                // ⚡ FAST silence detection
                 clearTimeout(silenceTimerRef.current);
 
                 silenceTimerRef.current = setTimeout(() => {
                     if (recorder.state === "recording") {
                         recorder.stop();
                     }
-                }, 250); // 🔥 was 1200 → now FAST
+                }, 250);
             };
 
             recorder.onstop = handleVoiceUpload;
 
-            recorder.start(120); // 🔥 faster chunks (was 250)
+            recorder.start(120);
 
-            // ⏱️ max recording safety
             maxTimerRef.current = setTimeout(() => {
                 if (recorder.state === "recording") {
                     recorder.stop();
                 }
-            }, 5000); // slightly reduced
+            }, 5000);
 
         } catch (err) {
             console.log("Mic error:", err);
@@ -162,7 +166,6 @@ export const useVoiceEngine = (API_BASE, sessionIdRef) => {
 
         const blob = new Blob(audioChunksRef.current);
 
-        // ⚡ smaller threshold for faster trigger
         if (blob.size < 2000) {
             return restartListening();
         }
@@ -189,7 +192,6 @@ export const useVoiceEngine = (API_BASE, sessionIdRef) => {
                 { role: "bot", text },
             ]);
 
-            // ⚡ NO WAIT → instant speak
             playStreamingAudio(text);
 
         } catch (err) {
@@ -201,7 +203,7 @@ export const useVoiceEngine = (API_BASE, sessionIdRef) => {
     };
 
     // ===============================
-    // 🔁 FAST RESTART
+    // 🔁 RESTART
     // ===============================
     const restartListening = () => {
         setTimeout(() => {
@@ -212,7 +214,7 @@ export const useVoiceEngine = (API_BASE, sessionIdRef) => {
             ) {
                 startRecording();
             }
-        }, 150); // 🔥 ultra fast restart
+        }, 150);
     };
 
     return {
