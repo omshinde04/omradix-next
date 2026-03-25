@@ -6,6 +6,9 @@ import SmoothScroll from "../components/smoothscrool/SmoothScroll";
 import CookieBanner from "../components/global/CookieBanner";
 import { Inter } from "next/font/google";
 
+// ✅ IMPORT YOUR AI AGENT
+import AIWidget from "../components/agent/AIWidget";
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -104,28 +107,28 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
       <body
         className={`${inter.className} bg-backgroundLight text-textPrimary antialiased`}
       >
-
         <SmoothScroll>
 
           <Navbar />
 
           <main>{children}</main>
 
+          {/* 🤖 AI AGENT (ABOVE WHATSAPP) */}
+          <AIWidget />
+
+          {/* 💬 WHATSAPP */}
           <WhatsAppChat />
 
           <Footer />
 
-          {/* COOKIE BANNER */}
+          {/* 🍪 COOKIE BANNER */}
           <CookieBanner />
 
         </SmoothScroll>
-
       </body>
-
     </html>
   );
 }
