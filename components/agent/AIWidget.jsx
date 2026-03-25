@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useVoiceEngine } from "./hooks/useVoiceEngine.js";
+import { useVoiceEngine } from "./hooks/useVoiceEngine";
 import MicButton from "./MicButton";
 import MessageList from "./MessageList";
 import axios from "axios";
