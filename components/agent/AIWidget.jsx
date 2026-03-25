@@ -30,7 +30,14 @@ export default function AIWidget() {
         let session = localStorage.getItem("ai_session");
 
         if (!session) {
-            session = crypto.randomUUID();
+            session =
+                typeof crypto !== "undefined" && crypto.randomUUID
+                    ? crypto.randomUUID()
+                    : "session-" +
+                    Date.now() +
+                    "-" +
+                    Math.random().toString(36).substring(2, 10);
+
             localStorage.setItem("ai_session", session);
         }
 
