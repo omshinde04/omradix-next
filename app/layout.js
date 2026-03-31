@@ -132,8 +132,6 @@ export default function RootLayout({ children }) {
 
             <Footer />
 
-            {/* FLOATING ELEMENTS */}
-            <WhatsAppChat />
 
             {/* COOKIE */}
             <CookieBanner />
@@ -142,6 +140,8 @@ export default function RootLayout({ children }) {
             {/* <AIWidget /> */}
 
           </Loader>
+          {/* FLOATING ELEMENTS */}
+          <WhatsAppChat />
 
         </SmoothScroll>
       </body>
