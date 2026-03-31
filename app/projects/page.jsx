@@ -6,82 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-export const metadata = {
-    title: "Our Projects & Case Studies | Web, AI & SaaS Portfolio India | Omradix Solutions",
-
-    description:
-        "Explore real-world projects built by Omradix Solutions including web applications, AI platforms, SaaS products and ecommerce systems. Trusted software development company in India.",
-
-    keywords: [
-        "web development portfolio India",
-        "software development company projects",
-        "AI project examples India",
-        "SaaS application portfolio",
-        "Next.js projects India",
-        "React projects portfolio",
-        "Omradix Solutions projects",
-        "case studies software development",
-        "custom web applications portfolio",
-        "digital product development company India"
-    ],
-
-    authors: [{ name: "Omradix Solutions", url: "https://www.omradixsolutions.in" }],
-    creator: "Omradix Solutions",
-    publisher: "Omradix Solutions",
-
-    metadataBase: new URL("https://www.omradixsolutions.in"),
-
-    alternates: {
-        canonical: "/projects",
-    },
-
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-        },
-    },
-
-    openGraph: {
-        title: "Our Projects | Omradix Solutions Portfolio",
-        description:
-            "View real-world web, AI and SaaS projects developed by Omradix Solutions. Explore our portfolio and case studies.",
-        url: "https://www.omradixsolutions.in/projects",
-        siteName: "Omradix Solutions",
-        type: "website",
-        locale: "en_IN",
-        images: [
-            {
-                url: "/images/projects/Abcorp.png",
-                width: 1200,
-                height: 630,
-                alt: "Omradix Solutions Projects Portfolio",
-            },
-        ],
-    },
-
-    twitter: {
-        card: "summary_large_image",
-        title: "Omradix Solutions Projects",
-        description:
-            "Explore our portfolio of web, AI and SaaS development projects.",
-        images: ["/images/projects/Abcorp.png"],
-    },
-
-    category: "technology",
-
-    other: {
-        "geo.region": "IN",
-        "geo.placename": "India",
-        "contact:phone_number": "+91 9373545169",
-        "contact:email": "omradixsolutions@gmail.com",
-    },
-};
-
 const filters = [
     "All",
     "Corporate Website",
@@ -161,51 +85,6 @@ export default function ProjectsPage() {
 
     return (
         <main className="bg-white">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        name: "Omradix Solutions",
-                        url: "https://www.omradixsolutions.in",
-                        logo: "https://www.omradixsolutions.in/logo.png",
-                        email: "omradixsolutions@gmail.com",
-                        telephone: ["+919373545169", "+917378534650"],
-                        address: {
-                            "@type": "PostalAddress",
-                            addressCountry: "India"
-                        }
-                    })
-                }}
-            />
-
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "ItemList",
-                        itemListElement: [
-                            {
-                                "@type": "CreativeWork",
-                                name: "AB Corp India Website",
-                                url: "https://abcorpindia.com"
-                            },
-                            {
-                                "@type": "CreativeWork",
-                                name: "CARPS India Website",
-                                url: "https://carpsindia.com"
-                            },
-                            {
-                                "@type": "CreativeWork",
-                                name: "PhishScan AI Platform",
-                                url: "https://phishscan.vercel.app/"
-                            }
-                        ]
-                    })
-                }}
-            />
 
             {/* HERO */}
 
