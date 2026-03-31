@@ -78,5 +78,9 @@ export default function Loader({ children }) {
         );
     }
 
-    return <div className="animate-pageEnter">{children}</div>;
+    return (
+        <div className="min-h-screen bg-black animate-pageEnter">
+            {children}
+        </div>
+    );
 }
