@@ -7,7 +7,7 @@ import CookieBanner from "../components/global/CookieBanner";
 import { Inter } from "next/font/google";
 
 // ✅ IMPORT YOUR AI AGENT
-import AIWidget from "../components/agent/AIWidget";
+// import AIWidget from "../components/agent/AIWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -117,7 +117,7 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
 
           {/* 🤖 AI AGENT (ABOVE WHATSAPP) */}
-          <AIWidget />
+          {/* <AIWidget /> */}
 
           {/* 💬 WHATSAPP */}
           <WhatsAppChat />

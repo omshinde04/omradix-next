@@ -1,0 +1,73 @@
+{
+    "version": "8.0.0",
+    "chatbots": [
+        {
+            "name": "welcome_carps",
+            "keywords": "hi,hello,carps",
+            "type_search": "1",
+            "template": "0",
+            "type": "1",
+            "caption": "Namaste 🙏 [wa_name]\n\nWelcome to *CARPS Institute* 🎓\n\nWe help students and professionals become *career-ready with industry skills, internships, and expert mentorship.*\n\nPlease choose an option 👇\n\n1️⃣ Programs & Courses\n2️⃣ Internship Opportunities\n3️⃣ Expert Trainers\n4️⃣ Corporate Training\n5️⃣ About CARPS\n6️⃣ Contact Us\n7️⃣ Visit Website\n\nReply with the number to continue.",
+            "media": null,
+            "status": "1",
+            "is_default": "1"
+        },
+        {
+            "name": "programs",
+            "keywords": "1",
+            "type_search": "2",
+            "template": "0",
+            "type": "1",
+            "caption": "*📚 CARPS Programs & Courses*\n\nWe provide industry-oriented programs to bridge the academic and corporate gap.\n\nPopular programs include:\n\n• Advanced Excel & Power BI\n• Digital Marketing & Branding\n• Import & Export Management\n• Logistics & Supply Chain\n• Corporate Readiness Skills\n• Soft Skills Development\n• Behavioural Training\n• AI / ML / Cybersecurity\n• UPSC / MPSC Preparation\n\nThese programs focus on practical learning and real industry exposure.\n\nReply below 👇\n\n2️⃣ Internship Opportunities\n3️⃣ Meet Trainers\n6️⃣ Contact Us\n0️⃣ Main Menu"
+        },
+        {
+            "name": "internship",
+            "keywords": "2",
+            "type_search": "2",
+            "template": "0",
+            "type": "1",
+            "caption": "*💼 Internship Opportunities*\n\nCARPS provides structured internships to help students gain real corporate experience.\n\nInternship benefits:\n\n• Real-world projects\n• Industry mentorship\n• Skill-based training\n• Career guidance\n• Professional exposure\n\nOur internships are designed to make students *industry-ready professionals.*\n\nReply below 👇\n\n1️⃣ View Programs\n6️⃣ Contact Us\n0️⃣ Main Menu"
+        },
+        {
+            "name": "trainers",
+            "keywords": "3",
+            "type_search": "2",
+            "template": "0",
+            "type": "1",
+            "caption": "*👨‍🏫 Meet Our Expert Trainers*\n\nOur trainers are experienced professionals from multiple industries.\n\nKey trainers:\n\n• Collina Lawrence – Founder & Corporate Trainer\n• Anup Pradhan – HR & Leadership Expert\n• Ajay Munde – Entrepreneurship & Marketing\n• Abhed Chopade – Corporate Training Specialist\n• Prabhat R Chaubey – AI, Cybersecurity & DevOps\n• Sushmita Ingale – Logistics & Import Export\n• Ruchi Nagwanshi – Soft Skills Trainer\n• Abhaykumar Gavali – Python & Data Science\n\nLearn directly from industry experts.\n\nReply below 👇\n\n1️⃣ Programs\n6️⃣ Contact Us\n0️⃣ Main Menu"
+        },
+        {
+            "name": "corporate_training",
+            "keywords": "4",
+            "type_search": "2",
+            "template": "0",
+            "type": "1",
+            "caption": "*🏢 Corporate Training Programs*\n\nCARPS delivers professional corporate training to organizations.\n\nTraining areas:\n\n• Workplace Communication\n• Leadership Development\n• Emotional Intelligence\n• Productivity & Focus\n• Human Skills in AI Era\n• Client Relationship Excellence\n• Agile Thinking & Adaptability\n\nOur training helps organizations build *high-performance teams.*\n\nReply below 👇\n\n6️⃣ Contact Us\n7️⃣ Visit Website\n0️⃣ Main Menu"
+        },
+        {
+            "name": "about_carps",
+            "keywords": "5",
+            "type_search": "2",
+            "template": "0",
+            "type": "1",
+            "caption": "*🏫 About CARPS Institute*\n\nCARPS Learning Solutions focuses on developing:\n\nC – Confidence\nA – Attitude\nR – Responsibility\nP – Personality\nS – Success\n\nOur mission is to bridge the gap between academic learning and corporate expectations.\n\nWe empower students with:\n\n• Confidence\n• Professional behaviour\n• Career clarity\n• Industry skills\n\nCARPS helps students become *career-ready professionals.*\n\nReply below 👇\n\n1️⃣ Programs\n6️⃣ Contact Us\n0️⃣ Main Menu"
+        },
+        {
+            "name": "contact",
+            "keywords": "6",
+            "type_search": "2",
+            "template": "0",
+            "type": "1",
+            "caption": "*📞 Contact CARPS Institute*\n\nFor course details or training inquiries please contact us:\n\n📧 Email\nadmin@carpsindia.com\n\n📞 Phone\n+91 9370682285\n\nYou can also visit our website for more details.\n\nReply below 👇\n\n7️⃣ Visit Website\n0️⃣ Main Menu"
+        },
+        {
+            "name": "website",
+            "keywords": "7",
+            "type_search": "2",
+            "template": "0",
+            "type": "1",
+            "caption": "*🌐 Visit Our Website*\n\nExplore programs, trainers, internships and corporate training.\n\n👉 https://carpsindia.com\n\nReply below 👇\n\n0️⃣ Main Menu"
+        }
+    ],
+    "templates": []
+}
