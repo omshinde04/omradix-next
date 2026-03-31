@@ -1,114 +1,87 @@
-"use client"
+import BlogsClient from "./BlogsClient";
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { blogs } from "../../data/blogsData"
-import BlogModal from "../../components/blog/BlogModal"
+export const metadata = {
+    title: "Tech Blogs on AI, Web Development & SaaS | Omradix Solutions India",
 
-export default function BlogsPage() {
+    description:
+        "Explore expert blogs by Omradix Solutions on web development, AI technologies, SaaS platforms and digital innovation. Learn modern tech and grow your business.",
 
-    const [selectedBlog, setSelectedBlog] = useState(null)
+    keywords: [
+        "web development blogs India",
+        "AI blogs India",
+        "SaaS development blogs",
+        "Next.js tutorials",
+        "React development blogs",
+        "software development insights",
+        "digital innovation blogs",
+        "Omradix Solutions blogs",
+        "latest tech blogs India",
+        "programming blogs for developers"
+    ],
 
-    return (
+    authors: [
+        {
+            name: "Omradix Solutions",
+            url: "https://www.omradixsolutions.in"
+        }
+    ],
 
-        <main>
+    creator: "Omradix Solutions",
+    publisher: "Omradix Solutions",
 
-            <section className="max-w-7xl mx-auto px-6 pt-28 pb-14 text-center">
+    metadataBase: new URL("https://www.omradixsolutions.in"),
 
-                <h1 className="text-4xl md:text-5xl font-bold">
-                    Insights & Technology Blogs
-                </h1>
+    alternates: {
+        canonical: "/blogs",
+    },
 
-                <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-                    Explore insights on modern software development, AI technologies and digital innovation.
-                </p>
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
 
-            </section>
+    openGraph: {
+        title: "Tech Blogs | Omradix Solutions",
+        description:
+            "Read blogs on AI, web development, SaaS and modern digital technologies.",
+        url: "https://www.omradixsolutions.in/blogs",
+        siteName: "Omradix Solutions",
+        locale: "en_IN",
+        type: "website",
+        images: [
+            {
+                url: "/images/og-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Omradix Solutions Blogs",
+            },
+        ],
+    },
 
-            <section className="max-w-7xl mx-auto px-6 pb-24">
+    twitter: {
+        card: "summary_large_image",
+        title: "Omradix Solutions Blogs",
+        description:
+            "Insights on AI, web development and SaaS technologies.",
+        images: ["/images/og-image.jpg"],
+    },
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    category: "technology",
 
-                    {blogs.map((blog) => (
-                        <motion.article
-                            key={blog.slug}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="group rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition overflow-hidden flex flex-col"
-                        >
+    other: {
+        "geo.region": "IN",
+        "geo.placename": "India",
+        "contact:phone_number": "+91 9373545169",
+        "contact:email": "omradixsolutions@gmail.com",
+    },
+};
 
-                            <div className="relative h-[200px]">
-
-                                <Image
-                                    src={blog.image}
-                                    alt={blog.title}
-                                    fill
-                                    sizes="(max-width:768px) 100vw, 33vw"
-                                    className="object-cover group-hover:scale-105 transition duration-300"
-                                />
-
-                            </div>
-
-                            <div className="p-6 flex flex-col flex-grow">
-
-                                <span className="text-xs text-blue-600 font-medium">
-                                    {blog.category}
-                                </span>
-
-                                <h2 className="text-lg font-semibold mt-2">
-                                    {blog.title}
-                                </h2>
-
-                                <p className="text-slate-600 text-sm mt-3 flex-grow">
-                                    {blog.desc}
-                                </p>
-
-                                <button
-                                    onClick={() => setSelectedBlog(blog)}
-                                    className="mt-5 text-blue-600 font-medium hover:underline"
-                                >
-                                    Read Article →
-                                </button>
-
-                            </div>
-
-                        </motion.article>
-                    ))}
-
-                </div>
-
-            </section>
-
-            <section className="py-20 bg-slate-50 text-center">
-
-                <h2 className="text-3xl font-bold">
-                    Need Help Building Modern Software?
-                </h2>
-
-                <p className="mt-4 text-slate-600">
-                    Our engineers build scalable digital products using modern technologies.
-                </p>
-
-                <Link
-                    href="/contact"
-                    className="inline-block mt-8 px-8 py-3 bg-blue-600 text-white rounded-full"
-                >
-                    Start Your Project
-                </Link>
-
-            </section>
-
-            {selectedBlog && (
-                <BlogModal
-                    blog={selectedBlog}
-                    onClose={() => setSelectedBlog(null)}
-                />
-            )}
-
-        </main>
-
-    )
+export default function Page() {
+    return <BlogsClient />;
 }

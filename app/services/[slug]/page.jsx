@@ -4,6 +4,46 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 /* STATIC ROUTES */
+export async function generateMetadata({ params }) {
+
+    const service = services.find((s) => s.slug === params.slug);
+
+    if (!service) return {};
+
+    return {
+        title: `${service.title} Services | Omradix Solutions India`,
+
+        description: service.description,
+
+        keywords: [
+            `${service.title} services`,
+            `${service.title} company India`,
+            `${service.title} development`,
+            "web development India",
+            "AI development India",
+            "SaaS development services",
+            "custom software development India",
+        ],
+
+        alternates: {
+            canonical: `/services/${service.slug}`,
+        },
+
+        openGraph: {
+            title: service.title,
+            description: service.description,
+            url: `https://www.omradixsolutions.in/services/${service.slug}`,
+            siteName: "Omradix Solutions",
+            type: "website",
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: service.title,
+            description: service.description,
+        },
+    };
+}
 
 export async function generateStaticParams() {
     return services.map((service) => ({
