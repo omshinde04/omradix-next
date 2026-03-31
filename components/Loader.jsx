@@ -6,62 +6,71 @@ export default function Loader({ children }) {
 
     const [loading, setLoading] = useState(true);
     const [exit, setExit] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
 
-        const timer = setTimeout(() => {
-            setExit(true);
-        }, 2200);
+        setMounted(true);
+        document.body.style.overflow = "hidden";
 
-        const remove = setTimeout(() => {
+        const exitTimer = setTimeout(() => setExit(true), 2000);
+
+        const removeTimer = setTimeout(() => {
             setLoading(false);
-        }, 2800);
+            document.body.style.overflow = "auto";
+        }, 2600);
 
         return () => {
-            clearTimeout(timer);
-            clearTimeout(remove);
+            clearTimeout(exitTimer);
+            clearTimeout(removeTimer);
         };
 
     }, []);
 
+    if (!mounted) return null;
+
     if (loading) {
         return (
-            <div className={`fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden transition-opacity duration-700 ${exit ? "opacity-0" : "opacity-100"}`}>
+            <div
+                className={`fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden transition-opacity duration-700 ${exit ? "opacity-0" : "opacity-100"
+                    }`}
+            >
 
-                {/* 🔥 BACKGROUND LIGHT SWEEP */}
-                <div className="absolute w-[600px] h-[600px] bg-blue-500/20 blur-3xl rounded-full animate-glowMove"></div>
+                {/* 🔥 PANEL REVEAL (BLUE + DARK) */}
+                <div className="absolute inset-0 flex z-20 pointer-events-none">
 
-                {/* 🔥 SLIDING PANELS (MULTI LAYER) */}
-                <div className="absolute inset-0 flex">
-
-                    <div className="flex-1 bg-blue-600 animate-slideLeftPremium"></div>
-                    <div className="flex-1 bg-slate-900 animate-slideRightPremium"></div>
+                    <div className="flex-1 bg-blue-600 animate-panelLeft"></div>
+                    <div className="flex-1 bg-slate-900 animate-panelRight"></div>
 
                 </div>
 
-                {/* 🔥 CENTER CONTENT */}
-                <div className="relative z-10 text-center">
+                {/* 🔥 LIGHT SOURCE */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-white/20 blur-3xl rounded-full animate-lightPulse z-10"></div>
 
-                    {/* LOGO TEXT */}
-                    <h1 className="text-4xl md:text-6xl font-bold text-white tracking-wide overflow-hidden">
+                {/* 🔦 SPOTLIGHT */}
+                <div className="spotlight-cone z-10"></div>
 
-                        <span className="inline-block animate-textReveal">
+                {/* ✨ DUST */}
+                <div className="light-dust z-10"></div>
+
+                {/* 🔥 CONTENT */}
+                <div className="relative z-30 text-center px-6">
+
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-wide text-white">
+
+                        <span className="animate-textReveal">
                             Omradix
                         </span>
 
-                        <span className="inline-block text-blue-500 ml-2 animate-textReveal delay-200">
+                        <span className="text-blue-500 ml-2 animate-textReveal delay-200">
                             Solutions
                         </span>
 
                     </h1>
 
-                    {/* TAGLINE */}
-                    <p className="text-sm md:text-base text-slate-300 mt-4 tracking-wide animate-fadeUp delay-500">
+                    <p className="mt-4 text-sm md:text-base text-slate-300 animate-fadeUp delay-400">
                         Building Digital Excellence
                     </p>
-
-                    {/* LINE ANIMATION */}
-                    <div className="mt-6 w-32 h-[2px] bg-blue-500 mx-auto animate-lineGrow"></div>
 
                 </div>
 
@@ -69,5 +78,5 @@ export default function Loader({ children }) {
         );
     }
 
-    return children;
+    return <div className="animate-pageEnter">{children}</div>;
 }

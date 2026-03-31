@@ -49,77 +49,103 @@ body {
   animation: fadeIn 0.3s ease;
 }
 
-/* LEFT PANEL */
-@keyframes slideLeft {
+/* ================= PANEL REVEAL ================= */
+@keyframes panelLeft {
   0% {
     transform: translateX(0);
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-110%);
   }
 }
 
-/* RIGHT PANEL */
-@keyframes slideRight {
+@keyframes panelRight {
   0% {
     transform: translateX(0);
   }
 
   100% {
-    transform: translateX(100%);
+    transform: translateX(110%);
   }
 }
 
-.animate-slideLeft {
-  animation: slideLeft 1.8s ease forwards;
+.animate-panelLeft {
+  animation: panelLeft 1.4s cubic-bezier(0.77, 0, 0.18, 1) forwards;
 }
 
-.animate-slideRight {
-  animation: slideRight 1.8s ease forwards;
+.animate-panelRight {
+  animation: panelRight 1.4s cubic-bezier(0.77, 0, 0.18, 1) forwards;
 }
 
-/* LOGO FADE */
-@keyframes logoFade {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-    letter-spacing: 10px;
-  }
+/* ================= SPOTLIGHT ================= */
+.spotlight-cone {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 900px;
 
-  100% {
+  background: radial-gradient(ellipse at top,
+      rgba(255, 255, 255, 0.35) 0%,
+      rgba(255, 255, 255, 0.15) 25%,
+      rgba(255, 255, 255, 0.06) 50%,
+      transparent 75%);
+
+  filter: blur(50px);
+  opacity: 0;
+  animation: coneReveal 1.6s ease forwards;
+}
+
+@keyframes coneReveal {
+  to {
     opacity: 1;
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+/* ================= LIGHT PULSE ================= */
+@keyframes lightPulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
     transform: scale(1);
-    letter-spacing: 3px;
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
   }
 }
 
-.animate-logoFade {
-  animation: logoFade 1s ease forwards;
+.animate-lightPulse {
+  animation: lightPulse 3s ease-in-out infinite;
 }
 
-/* TEXT UP */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+/* ================= DUST ================= */
+.light-dust {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.2;
+  animation: dustMove 8s linear infinite;
+}
+
+@keyframes dustMove {
+  to {
+    transform: translateY(40px);
   }
-
-  100% {
-    opacity: 1;
-  }
 }
 
-.animate-fadeUp {
-  animation: fadeUp 1.2s ease forwards;
-}
-
-/* 🔥 TEXT REVEAL */
+/* ================= TEXT ================= */
 @keyframes textReveal {
   0% {
     opacity: 0;
-    transform: translateY(40px);
-    letter-spacing: 10px;
+    transform: translateY(30px);
+    letter-spacing: 8px;
   }
 
   100% {
@@ -130,17 +156,17 @@ body {
 }
 
 .animate-textReveal {
-  animation: textReveal 1.2s ease forwards;
+  animation: textReveal 1s ease forwards;
 }
 
-/* 🔥 FADE UP */
+/* ================= FADE ================= */
 @keyframes fadeUp {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
 
-  100% {
+  to {
     opacity: 1;
   }
 }
@@ -149,65 +175,18 @@ body {
   animation: fadeUp 1.2s ease forwards;
 }
 
-/* 🔥 LINE GROW */
-@keyframes lineGrow {
-  0% {
-    width: 0;
+/* ================= PAGE ENTRY ================= */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
 
-  100% {
-    width: 120px;
-  }
-}
-
-.animate-lineGrow {
-  animation: lineGrow 1s ease forwards;
-}
-
-/* 🔥 PREMIUM PANEL SLIDE */
-@keyframes slideLeftPremium {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-120%);
+  to {
+    opacity: 1;
   }
 }
 
-@keyframes slideRightPremium {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(120%);
-  }
-}
-
-.animate-slideLeftPremium {
-  animation: slideLeftPremium 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
-}
-
-.animate-slideRightPremium {
-  animation: slideRightPremium 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
-}
-
-/* 🔥 GLOW MOVE */
-@keyframes glowMove {
-  0% {
-    transform: translate(-20%, -20%) scale(1);
-  }
-
-  50% {
-    transform: translate(20%, 10%) scale(1.2);
-  }
-
-  100% {
-    transform: translate(-10%, 20%) scale(1);
-  }
-}
-
-.animate-glowMove {
-  animation: glowMove 6s infinite ease-in-out;
+.animate-pageEnter {
+  animation: pageEnter 0.5s ease forwards;
 }
