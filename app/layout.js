@@ -4,6 +4,7 @@ import WhatsAppChat from "../components/whatsapp/WhatsAppChat";
 import Footer from "../components/footer/Footer";
 import SmoothScroll from "../components/smoothscrool/SmoothScroll";
 import CookieBanner from "../components/global/CookieBanner";
+import Loader from "../components/Loader";
 import { Inter } from "next/font/google";
 
 // ✅ IMPORT YOUR AI AGENT
@@ -113,8 +114,10 @@ export default function RootLayout({ children }) {
         <SmoothScroll>
 
           <Navbar />
+          <Loader>
+            <main>{children}</main>
+          </Loader>
 
-          <main>{children}</main>
 
           {/* 🤖 AI AGENT (ABOVE WHATSAPP) */}
           {/* <AIWidget /> */}

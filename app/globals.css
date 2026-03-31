@@ -48,3 +48,166 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.3s ease;
 }
+
+/* LEFT PANEL */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* RIGHT PANEL */
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 1.8s ease forwards;
+}
+
+.animate-slideRight {
+  animation: slideRight 1.8s ease forwards;
+}
+
+/* LOGO FADE */
+@keyframes logoFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+    letter-spacing: 10px;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    letter-spacing: 3px;
+  }
+}
+
+.animate-logoFade {
+  animation: logoFade 1s ease forwards;
+}
+
+/* TEXT UP */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* 🔥 TEXT REVEAL */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    letter-spacing: 10px;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 2px;
+  }
+}
+
+.animate-textReveal {
+  animation: textReveal 1.2s ease forwards;
+}
+
+/* 🔥 FADE UP */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* 🔥 LINE GROW */
+@keyframes lineGrow {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 120px;
+  }
+}
+
+.animate-lineGrow {
+  animation: lineGrow 1s ease forwards;
+}
+
+/* 🔥 PREMIUM PANEL SLIDE */
+@keyframes slideLeftPremium {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-120%);
+  }
+}
+
+@keyframes slideRightPremium {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.animate-slideLeftPremium {
+  animation: slideLeftPremium 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+.animate-slideRightPremium {
+  animation: slideRightPremium 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+/* 🔥 GLOW MOVE */
+@keyframes glowMove {
+  0% {
+    transform: translate(-20%, -20%) scale(1);
+  }
+
+  50% {
+    transform: translate(20%, 10%) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-10%, 20%) scale(1);
+  }
+}
+
+.animate-glowMove {
+  animation: glowMove 6s infinite ease-in-out;
+}
