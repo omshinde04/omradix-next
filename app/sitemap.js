@@ -1,4 +1,4 @@
-import { services } from "@/data/servicesData";
+import { services } from "../data/servicesData";
 // import { projects } from "@/data/projectsData"; // future
 // import { blogs } from "@/data/blogsData"; // future
 
