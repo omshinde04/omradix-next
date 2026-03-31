@@ -1,24 +1,49 @@
 export const metadata = {
-    title: "Privacy Policy | Omradix Solutions",
+    title: "Privacy Policy | Omradix Solutions India",
+
     description:
-        "Read the Privacy Policy of Omradix Solutions to understand how we collect, use, protect, and manage your personal information when using our website and services.",
+        "Read the Privacy Policy of Omradix Solutions to understand how we collect, use, protect and manage your personal data in compliance with security standards. Contact us at +91 9373545169.",
+
     keywords: [
         "Omradix Solutions Privacy Policy",
-        "Data protection policy",
-        "Website privacy policy",
-        "Software company privacy policy",
-        "User data protection"
+        "data protection policy India",
+        "website privacy policy India",
+        "software company privacy policy",
+        "user data protection policy",
+        "GDPR privacy policy website",
+        "data security policy India"
     ],
+
+    authors: [{ name: "Omradix Solutions", url: "https://www.omradixsolutions.in" }],
+    creator: "Omradix Solutions",
+    publisher: "Omradix Solutions",
+
+    metadataBase: new URL("https://www.omradixsolutions.in"),
+
     alternates: {
-        canonical: "https://www.omradixsolutions.in/privacy-policy",
+        canonical: "/privacy-policy",
     },
+
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
+
     openGraph: {
         title: "Privacy Policy | Omradix Solutions",
         description:
-            "Learn how Omradix Solutions collects, uses, and protects your personal information.",
+            "Learn how Omradix Solutions collects, uses and protects your personal data and ensures privacy compliance.",
         url: "https://www.omradixsolutions.in/privacy-policy",
         siteName: "Omradix Solutions",
-        type: "website",
+        type: "article",
+        locale: "en_IN",
         images: [
             {
                 url: "/og-image.png",
@@ -28,16 +53,22 @@ export const metadata = {
             },
         ],
     },
+
     twitter: {
         card: "summary_large_image",
         title: "Privacy Policy | Omradix Solutions",
         description:
-            "Understand how Omradix Solutions handles and protects your personal data.",
+            "Understand how Omradix Solutions handles and protects your personal data securely.",
         images: ["/og-image.png"],
     },
-    robots: {
-        index: true,
-        follow: true,
+
+    category: "legal",
+
+    other: {
+        "geo.region": "IN",
+        "geo.placename": "India",
+        "contact:phone_number": "+91 9373545169",
+        "contact:email": "omradixsolutions@gmail.com",
     },
 };
 

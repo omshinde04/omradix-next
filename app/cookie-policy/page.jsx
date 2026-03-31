@@ -1,28 +1,49 @@
 export const metadata = {
-    title: "Cookie Policy | Omradix Solutions",
+    title: "Cookie Policy | Omradix Solutions India",
+
     description:
-        "Learn how Omradix Solutions uses cookies and tracking technologies to improve website performance, user experience, and analytics insights.",
+        "Read the Cookie Policy of Omradix Solutions to understand how we use cookies, tracking technologies and analytics tools to enhance user experience, website performance and security.",
+
     keywords: [
         "Omradix Solutions cookie policy",
-        "website cookies policy",
+        "website cookies policy India",
         "tracking technologies policy",
-        "analytics cookies",
+        "analytics cookies usage",
+        "privacy cookies policy India",
         "software company cookie policy",
-        "privacy cookies policy",
+        "GDPR cookies policy website"
     ],
 
+    authors: [{ name: "Omradix Solutions", url: "https://www.omradixsolutions.in" }],
+    creator: "Omradix Solutions",
+    publisher: "Omradix Solutions",
+
+    metadataBase: new URL("https://www.omradixsolutions.in"),
+
     alternates: {
-        canonical: "https://www.omradixsolutions.in/cookie-policy",
+        canonical: "/cookie-policy",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
     },
 
     openGraph: {
         title: "Cookie Policy | Omradix Solutions",
         description:
-            "Understand how Omradix Solutions uses cookies and tracking technologies to enhance browsing experience and website performance.",
+            "Understand how Omradix Solutions uses cookies and tracking technologies to improve website performance, analytics and user experience.",
         url: "https://www.omradixsolutions.in/cookie-policy",
         siteName: "Omradix Solutions",
-        type: "website",
-        locale: "en_US",
+        type: "article",
+        locale: "en_IN",
         images: [
             {
                 url: "/og-image.png",
@@ -41,9 +62,12 @@ export const metadata = {
         images: ["/og-image.png"],
     },
 
-    robots: {
-        index: true,
-        follow: true,
+    category: "legal",
+
+    other: {
+        "geo.region": "IN",
+        "geo.placename": "India",
+        "contact:email": "omradixsolutions@gmail.com",
     },
 };
 

@@ -1,24 +1,49 @@
 export const metadata = {
-    title: "Terms and Conditions | Omradix Solutions",
+    title: "Terms and Conditions | Omradix Solutions India",
+
     description:
-        "Read the Terms and Conditions governing the use of Omradix Solutions website and services including intellectual property, limitations of liability, and user responsibilities.",
+        "Read the Terms and Conditions of Omradix Solutions governing the use of our website and services, including intellectual property, liability limitations and user responsibilities. Contact us at +91 9373545169.",
+
     keywords: [
-        "Omradix Solutions Terms",
-        "Website terms and conditions",
-        "Software development company terms",
-        "Service terms and policies",
-        "User agreement Omradix Solutions"
+        "Omradix Solutions terms and conditions",
+        "website terms and conditions India",
+        "software development company terms",
+        "service terms and policies India",
+        "user agreement Omradix Solutions",
+        "legal terms software company India",
+        "website usage policy India"
     ],
+
+    authors: [{ name: "Omradix Solutions", url: "https://www.omradixsolutions.in" }],
+    creator: "Omradix Solutions",
+    publisher: "Omradix Solutions",
+
+    metadataBase: new URL("https://www.omradixsolutions.in"),
+
     alternates: {
-        canonical: "https://www.omradixsolutions.in/terms-and-conditions",
+        canonical: "/terms-and-conditions",
     },
+
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
+
     openGraph: {
         title: "Terms and Conditions | Omradix Solutions",
         description:
-            "Understand the terms and conditions for using Omradix Solutions website and services.",
+            "Understand the legal terms and conditions for using Omradix Solutions website and services.",
         url: "https://www.omradixsolutions.in/terms-and-conditions",
         siteName: "Omradix Solutions",
-        type: "website",
+        type: "article",
+        locale: "en_IN",
         images: [
             {
                 url: "/og-image.png",
@@ -28,6 +53,7 @@ export const metadata = {
             },
         ],
     },
+
     twitter: {
         card: "summary_large_image",
         title: "Terms and Conditions | Omradix Solutions",
@@ -35,9 +61,14 @@ export const metadata = {
             "Review the terms governing the use of Omradix Solutions website and services.",
         images: ["/og-image.png"],
     },
-    robots: {
-        index: true,
-        follow: true,
+
+    category: "legal",
+
+    other: {
+        "geo.region": "IN",
+        "geo.placename": "India",
+        "contact:phone_number": "+91 9373545169",
+        "contact:email": "omradixsolutions@gmail.com",
     },
 };
 
