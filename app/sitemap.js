@@ -1,6 +1,5 @@
 import { services } from "../data/servicesData";
-// import { projects } from "../data/projectsData"; // future
-// import { blogs } from "../data/blogsData"; // future
+import { blogs } from "../data/blogsData";
 
 export default function sitemap() {
 
@@ -11,37 +10,37 @@ export default function sitemap() {
     const staticRoutes = [
         {
             url: baseUrl,
-            lastModified: new Date(),
+            lastModified: "2026-04-01",
             priority: 1.0,
             changeFrequency: "weekly",
         },
         {
             url: `${baseUrl}/about`,
-            lastModified: new Date(),
+            lastModified: "2026-03-01",
             priority: 0.9,
             changeFrequency: "monthly",
         },
         {
             url: `${baseUrl}/services`,
-            lastModified: new Date(),
+            lastModified: "2026-04-01",
             priority: 0.95,
             changeFrequency: "weekly",
         },
         {
             url: `${baseUrl}/projects`,
-            lastModified: new Date(),
+            lastModified: "2026-03-20",
             priority: 0.9,
             changeFrequency: "weekly",
         },
         {
             url: `${baseUrl}/blogs`,
-            lastModified: new Date(),
-            priority: 0.85,
-            changeFrequency: "weekly",
+            lastModified: "2026-04-01",
+            priority: 0.9,
+            changeFrequency: "daily",
         },
         {
             url: `${baseUrl}/contact`,
-            lastModified: new Date(),
+            lastModified: "2026-02-15",
             priority: 0.8,
             changeFrequency: "monthly",
         },
@@ -49,59 +48,45 @@ export default function sitemap() {
         /* LEGAL */
         {
             url: `${baseUrl}/privacy-policy`,
-            lastModified: new Date(),
-            priority: 0.5,
+            lastModified: "2026-01-01",
+            priority: 0.6,
             changeFrequency: "yearly",
         },
         {
             url: `${baseUrl}/cookie-policy`,
-            lastModified: new Date(),
-            priority: 0.5,
+            lastModified: "2026-01-01",
+            priority: 0.6,
             changeFrequency: "yearly",
         },
         {
             url: `${baseUrl}/terms-and-conditions`,
-            lastModified: new Date(),
-            priority: 0.5,
+            lastModified: "2026-01-01",
+            priority: 0.6,
             changeFrequency: "yearly",
         },
     ];
 
-    /* ================= SERVICES (DYNAMIC) ================= */
+    /* ================= SERVICES ================= */
 
     const serviceRoutes = services.map((service) => ({
         url: `${baseUrl}/services/${service.slug}`,
-        lastModified: new Date(),
-        priority: 0.9, // increased (important pages)
+        lastModified: "2026-04-01",
+        priority: 0.9,
         changeFrequency: "monthly",
     }));
 
-    /* ================= FUTURE: PROJECT SLUGS ================= */
+    /* ================= BLOGS (IMPORTANT FOR SEO) ================= */
 
-    // const projectRoutes = projects.map((project) => ({
-    //     url: `${baseUrl}/projects/${project.slug}`,
-    //     lastModified: new Date(),
-    //     priority: 0.85,
-    //     changeFrequency: "monthly",
-    // }));
+    const blogRoutes = blogs.map((blog) => ({
+        url: `${baseUrl}/blogs/${blog.slug}`,
+        lastModified: "2026-04-01",
+        priority: 0.85,
+        changeFrequency: "monthly",
+    }));
 
-    /* ================= FUTURE: BLOG SLUGS ================= */
-
-    // const blogRoutes = blogs.map((blog) => ({
-    //     url: `${baseUrl}/blogs/${blog.slug}`,
-    //     lastModified: new Date(),
-    //     priority: 0.85,
-    //     changeFrequency: "monthly",
-    // }));
-
-    /* ================= FINAL ================= */
-
-    const allRoutes = [
+    return [
         ...staticRoutes,
         ...serviceRoutes,
-        // ...projectRoutes,
-        // ...blogRoutes
+        ...blogRoutes,
     ];
-
-    return allRoutes;
 }

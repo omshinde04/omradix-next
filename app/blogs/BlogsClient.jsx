@@ -13,94 +13,118 @@ export default function BlogsPage() {
 
     return (
 
-        <main>
+        <main className="relative bg-white min-h-screen overflow-hidden">
 
-            <section className="max-w-7xl mx-auto px-6 pt-28 pb-14 text-center">
+            {/* 🔲 GRID BACKGROUND */}
+            <div
+                className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                style={{
+                    backgroundImage:
+                        "radial-gradient(circle at 1px 1px, rgba(0,0,0,0.25) 1px, transparent 0)",
+                    backgroundSize: "40px 40px",
+                }}
+            />
 
-                <h1 className="text-4xl md:text-5xl font-bold">
-                    Insights & Technology Blogs
-                </h1>
+            {/* 🔵 GLOW EFFECTS */}
+            <div className="absolute -top-40 -left-40 w-[400px] h-[400px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute -bottom-40 -right-40 w-[300px] h-[300px] bg-blue-400/10 blur-[120px] rounded-full pointer-events-none" />
 
-                <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-                    Explore insights on modern software development, AI technologies and digital innovation.
-                </p>
+            {/* CONTENT */}
+            <div className="relative z-10">
 
-            </section>
+                {/* HERO */}
+                <section className="max-w-7xl mx-auto px-6 pt-28 pb-14 text-center">
 
-            <section className="max-w-7xl mx-auto px-6 pb-24">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+                        Insights & Technology Blogs
+                    </h1>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+                        Explore insights on modern software development, AI technologies and digital innovation.
+                    </p>
 
-                    {blogs.map((blog) => (
-                        <motion.article
-                            key={blog.slug}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="group rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition overflow-hidden flex flex-col"
-                        >
+                </section>
 
-                            <div className="relative h-[200px]">
+                {/* BLOG GRID */}
+                <section className="max-w-7xl mx-auto px-6 pb-24">
 
-                                <Image
-                                    src={blog.image}
-                                    alt={blog.title}
-                                    fill
-                                    sizes="(max-width:768px) 100vw, 33vw"
-                                    className="object-cover group-hover:scale-105 transition duration-300"
-                                />
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                            </div>
+                        {blogs.map((blog) => (
+                            <motion.article
+                                key={blog.slug}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -6 }}
+                                className="group rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-2xl transition overflow-hidden flex flex-col"
+                            >
 
-                            <div className="p-6 flex flex-col flex-grow">
+                                {/* IMAGE */}
+                                <div className="relative h-[200px] overflow-hidden">
+                                    <Image
+                                        src={blog.image}
+                                        alt={blog.title}
+                                        fill
+                                        sizes="(max-width:768px) 100vw, 33vw"
+                                        className="object-cover group-hover:scale-105 transition duration-500"
+                                    />
+                                </div>
 
-                                <span className="text-xs text-blue-600 font-medium">
-                                    {blog.category}
-                                </span>
+                                {/* CONTENT */}
+                                <div className="p-6 flex flex-col flex-grow">
 
-                                <h2 className="text-lg font-semibold mt-2">
-                                    {blog.title}
-                                </h2>
+                                    <span className="text-xs text-blue-600 font-semibold">
+                                        {blog.category}
+                                    </span>
 
-                                <p className="text-slate-600 text-sm mt-3 flex-grow">
-                                    {blog.desc}
-                                </p>
+                                    <h2 className="text-lg font-semibold mt-2 text-slate-900 group-hover:text-blue-600 transition">
+                                        {blog.title}
+                                    </h2>
 
-                                <button
-                                    onClick={() => setSelectedBlog(blog)}
-                                    className="mt-5 text-blue-600 font-medium hover:underline"
-                                >
-                                    Read Article →
-                                </button>
+                                    <p className="text-slate-600 text-sm mt-3 flex-grow">
+                                        {blog.desc}
+                                    </p>
 
-                            </div>
+                                    <button
+                                        onClick={() => setSelectedBlog(blog)}
+                                        className="mt-5 text-blue-600 font-semibold hover:underline"
+                                    >
+                                        Read Article →
+                                    </button>
 
-                        </motion.article>
-                    ))}
+                                </div>
 
-                </div>
+                            </motion.article>
+                        ))}
 
-            </section>
+                    </div>
 
-            <section className="py-20 bg-slate-50 text-center">
+                </section>
 
-                <h2 className="text-3xl font-bold">
-                    Need Help Building Modern Software?
-                </h2>
+                {/* CTA SECTION */}
+                <section className="py-20 bg-slate-50 text-center">
 
-                <p className="mt-4 text-slate-600">
-                    Our engineers build scalable digital products using modern technologies.
-                </p>
+                    <h2 className="text-3xl font-bold text-slate-900">
+                        Need Help Building Modern Software?
+                    </h2>
 
-                <Link
-                    href="/contact"
-                    className="inline-block mt-8 px-8 py-3 bg-blue-600 text-white rounded-full"
-                >
-                    Start Your Project
-                </Link>
+                    <p className="mt-4 text-slate-600">
+                        Our engineers build scalable digital products using modern technologies.
+                    </p>
 
-            </section>
+                    <Link
+                        href="/contact"
+                        className="inline-block mt-8 px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition"
+                    >
+                        Start Your Project
+                    </Link>
 
+                </section>
+
+            </div>
+
+            {/* MODAL */}
             {selectedBlog && (
                 <BlogModal
                     blog={selectedBlog}
@@ -109,6 +133,5 @@ export default function BlogsPage() {
             )}
 
         </main>
-
     )
 }
