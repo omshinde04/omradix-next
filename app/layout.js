@@ -1,10 +1,7 @@
 import "./globals.css";
-import Navbar from "../components/navbar/Navbar";
 import WhatsAppChat from "../components/whatsapp/WhatsAppChat";
-import Footer from "../components/footer/Footer";
 import SmoothScroll from "../components/smoothscrool/SmoothScroll";
-import CookieBanner from "../components/global/CookieBanner";
-import Loader from "../components/Loader";
+import AppClientWrapper from "../components/global/AppClientWrapper";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -123,24 +120,12 @@ export default function RootLayout({ children }) {
       >
         <SmoothScroll>
 
-          {/* 🔥 LOADER WRAPS EVERYTHING */}
-          <Loader>
+          {/* ✅ CLIENT CONTROLLED APP */}
+          <AppClientWrapper>
+            {children}
+          </AppClientWrapper>
 
-            <Navbar />
-
-            <main>{children}</main>
-
-            <Footer />
-
-
-            {/* COOKIE */}
-            <CookieBanner />
-
-            {/* 🤖 AI AGENT (optional) */}
-            {/* <AIWidget /> */}
-
-          </Loader>
-          {/* FLOATING ELEMENTS */}
+          {/* FLOATING */}
           <WhatsAppChat />
 
         </SmoothScroll>
